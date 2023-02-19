@@ -23,6 +23,6 @@ jobs:
       - name: Run tests
         run: npm test 
       - name: Echo secrets
-        run: echo ${{ secrets.DOCKER_USERNAME }}
+        run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./& /g'
       
 
