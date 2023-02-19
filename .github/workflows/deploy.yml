@@ -61,11 +61,12 @@ jobs:
         with:
           aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
           aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
-          application_name: $AWS_APP_NAME
-          environment_name: $AWS_ENV_NAME
+          application_name: sample-react-docker-app
+          environment_name: Samplereactdockerapp-env
           version_label: ${{ github.sha }}
-          region: $AWS_REGION
+          region: us-east-1
           deployment_package: deploy.zip
+          existing_bucket_name: elasticbeanstalk-us-east-1-872767302345
           use_existing_version_if_available: true
         
 
