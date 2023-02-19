@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -22,7 +22,4 @@ jobs:
 
       - name: Run tests
         run: npm test 
-      - name: Echo secrets
-        run: echo ${{ secrets.DOCKER_USERNAME }} | sed 's/./& /g'
       
-
