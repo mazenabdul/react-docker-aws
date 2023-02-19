@@ -39,6 +39,20 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+      - name: Build & Tag Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: ./
+          file: ./Dockerfile
+          push: true
+          tags: mazenbdul/sample-react-docker-app:latest
+      
+      - name: Run image in container
+        uses: addnab/docker-run-action@v3
+        with:
+          image: mazenbdul/sample-react-docker-app:latest
+          run: echo "Successfully ran docker image"
+        
       
       
 
