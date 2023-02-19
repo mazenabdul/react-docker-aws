@@ -42,8 +42,6 @@ jobs:
       - name: Build & Tag Docker image
         uses: docker/build-push-action@v4
         with:
-          context: ./
-          file: ./Dockerfile
           push: true
           tags: mazenbdul/sample-react-docker-app:latest
       
