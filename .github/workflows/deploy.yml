@@ -24,6 +24,11 @@ jobs:
         run: npm test 
     
   build-and-push:
+    env: 
+      AWS_ENV_NAME: 'Samplereactdockerapp-env'
+      AWS_APP_NAME: 'sample-react-docker-app'
+      AWS_REGION: 'us-east-1'
+
     runs-on: ubuntu-latest
     needs: test
     steps:
@@ -50,7 +55,18 @@ jobs:
 
       - name: Generate ZIP
         run: zip -r deploy.zip . -x '*.git*'
-        
+
+      - name: Deploy ZIP to AWS Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_KEY }}
+          application_name: $AWS_APP_NAME
+          environment_name: $AWS_ENV_NAME
+          version_label: ${{ github.sha }}
+          region: $AWS_REGION
+          deployment_package: deploy.zip
+          use_existing_version_if_available: true
         
 
       
