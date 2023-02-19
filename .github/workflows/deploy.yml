@@ -1,13 +1,9 @@
 name: Deploy Dockerized React App
-on: 
-  push:
-    branches:
-      - main
-
+on: [push, workflow_dispatch]
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Get code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
