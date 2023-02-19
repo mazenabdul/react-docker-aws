@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: mazenabdul/sample-react-docker-app:${{ github.sha }}
+          tags: ${{ github.actor }}/sample-react-docker-app:${{ github.sha }}
         
       
       
