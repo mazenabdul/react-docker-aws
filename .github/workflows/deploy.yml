@@ -27,6 +27,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: test
     steps:
+      - name: Get code  
+        uses: actions/checkout@v2
+      
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
       
@@ -44,7 +47,12 @@ jobs:
         with:
           push: true
           tags: ${{ github.actor }}/sample-react-docker-app:${{ github.sha }}
+
+      - name: Generate ZIP
+        run: zip -r deploy.zip . -x '*.git*'
         
+        
+
       
       
 
