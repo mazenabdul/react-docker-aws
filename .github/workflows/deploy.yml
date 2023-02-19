@@ -43,13 +43,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: mazenabdul/sample-react-docker-app:latest
-      
-      - name: Run image in container
-        uses: addnab/docker-run-action@v3
-        with:
-          image: mazenbdul/sample-react-docker-app:latest
-          run: echo "Successfully ran docker image"
+          tags: mazenabdul/sample-react-docker-app:${{ github.sha }}
         
       
       
