@@ -1,0 +1,13 @@
+name: Deploy Dockerized React App
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+      - uses: actions/checkout@v3
+
