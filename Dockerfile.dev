@@ -1,0 +1,13 @@
+# React app node version
+FROM node:18-alpine
+
+# Set working directory
+WORKDIR '/app'
+
+# Copy over package json and all other files to container
+COPY package.json .
+RUN npm install
+COPY . . 
+
+# Start the react app
+CMD ["npm", "start"]
