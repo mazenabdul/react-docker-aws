@@ -42,9 +42,8 @@ jobs:
       - name: Build & Tag Docker image
         uses: docker/build-push-action@v4
         with:
-          context: .
           push: true
-          tags: mazenbdul/sample-react-docker-app:latest
+          tags: mazenabdul/sample-react-docker-app:latest
       
       - name: Run image in container
         uses: addnab/docker-run-action@v3
