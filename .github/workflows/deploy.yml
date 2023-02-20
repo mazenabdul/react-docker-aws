@@ -54,7 +54,7 @@ jobs:
           tags: ${{ github.actor }}/sample-react-docker-app:${{ github.sha }}
 
       - name: Generate ZIP
-        run: zip -r deploy.zip . -x '*.git*'
+        run: zip -r deploy-${{ github.sha }}.zip . -x '*.git*'
 
       - name: Deploy ZIP to AWS Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21

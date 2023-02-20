@@ -3,7 +3,7 @@
 
 # Build Front end Phase
 FROM node:18-alpine as build
-
+EXPOSE 80
 WORKDIR /app
 
 COPY package.json .
