@@ -1,3 +1,7 @@
+### About the App
+
+This project is a sample React, Node & NGINX app to keep a sample CI/CD workflow for reference. It demostrates how to dockerize a React app, create a simple workflow using Github Actions, and deploy the entire application onto AWS Elastic Beanstalk. Along the way, the image is also uploaded to Docker Hub as an example of using the build-and-push Github Action.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
